@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarketPro | Salman Memon</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #16446b, transparent 48%),
+        linear-gradient(145deg, #102d4a, #203466);
+}
+.container {
+    width: 100%;
+    max-width: 780px;
+    margin: auto;
+    padding: 16px;
+}
+/* TOP CHANNEL BAR */
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #081326;
+    border: 1px solid #2689ff;
+    border-radius: 28px;
+    padding: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 15px #087dff30;
+}
+.topbar img {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    object-fit: cover;
+    border: 2px solid #38aaff;
+}
+.top-text {
+    flex: 1;
+    min-width: 0;
+}
+.top-text h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+.top-text p {
+    color: #9eb1c9;
+    font-size: 12px;
+}
+.top-btn {
+    background: linear-gradient(120deg, #167cff, #08bce9);
+    color: white;
+    padding: 15px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    white-space: nowrap;
+}
+/* MAIN LOGO PHOTO */
+.hero {
+    text-align: center;
+    padding: 15px 0 30px;
+}
+.logo-box {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 32px;
+    border-radius: 35px;
+    border: 3px solid #269cff;
+    background: linear-gradient(145deg, #12385d, #205d8d);
+    box-shadow: 0 0 25px #169dff30;
+    padding: 9px;
+    overflow: hidden;
+}
+/* PHOTO OPTION: change trading-logo.jpg to your photo filename */
+.logo-box img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 25px;
+}
+.hero h1 {
+    font-size: clamp(29px, 6vw, 43px);
+    line-height: 1.3;
+    margin-bottom: 34px;
+    overflow-wrap: anywhere;
+}
+.hero h1 span {
+    color: #24baff;
+}
+.join-btn {
+    display: block;
+    width: 95%;
+    margin: auto;
+    padding: 22px 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    font-size: clamp(15px, 4vw, 21px);
+    background: linear-gradient(100deg, #087aff, #0bbde9, #087aff);
+    background-size: 200% auto;
+    border: 1px solid #66c7ff;
+    box-shadow: 0 0 22px #00aaff45;
+    animation: shine 3s linear infinite;
+}
+@keyframes shine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+.tagline {
+    margin: 24px 0;
+    color: #a9bdd8;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.info-btn {
+    display: inline-block;
+    border: 1px solid #168dff;
+    color: #a5d9ff;
+    padding: 18px 24px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: bold;
+}
+/* MARKET CARDS */
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 42px 0 60px;
+}
+.market-card {
+    background: #0a1529;
+    border: 1px solid #203b62;
+    border-radius: 25px;
+    padding: 22px 13px;
+}
+.market-card h3 {
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+.market-card .price {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+.up {
+    color: #31e4a1;
+    font-size: 14px;
+}
+.down {
+    color: #ff6c91;
+    font-size: 14px;
+}
+/* WHY FOLLOW */
+.section-title {
+    text-align: center;
+    font-size: 29px;
+    margin-bottom: 36px;
+}
+.section-title span {
+    color: #25baff;
+}
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+.feature {
+    background: #0a1529;
+    border: 1px solid #29486e;
+    border-radius: 28px;
+    text-align: center;
+    padding: 30px 12px;
+}
+.feature .emoji {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+.feature h3 {
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+.feature p {
+    color: #aabbd1;
+    line-height: 1.6;
+    font-size: 14px;
+}
+.bottom-join {
+    margin: 35px 0 15px;
+}
+footer {
+    text-align: center;
+    color: #91a7c4;
+    font-size: 12px;
+    padding: 25px 5px;
+    line-height: 1.8;
+}
+@media (max-width: 400px) {
+    .container {
+        padding: 12px;
+    }
+    .topbar {
+        padding: 12px;
+        gap: 9px;
+    }
+    .topbar img {
+        width: 54px;
+        height: 54px;
+    }
+    .top-text h3 {
+        font-size: 15px;
+    }
+    .top-btn {
+        padding: 13px 10px;
+        font-size: 11px;
+    }
+    .logo-box {
+        width: 140px;
+        height: 140px;
+    }
+    .market-grid {
+        gap: 8px;
+    }
+    .market-card {
+        padding: 18px 10px;
+    }
+    .market-card h3 {
+        font-size: 12px;
+    }
+    .market-card .price {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- TOP BAR PHOTO: replace profile.jpg with your image -->
+    <div class="topbar">
+        <img src="profile.jpg" alt="MarketPro Profile Photo">
+        <div class="top-text">
+            <h3>MARKETPRO</h3>
+            <p>STOCK MARKET INFORMATION</p>
+        </div>
+        <a class="top-btn"
+           href="https://t.me/YOUR_CHANNEL"
+           target="_blank" rel="noopener">
+           JOIN CHANNEL
+        </a>
+    </div>
+    <!-- MAIN TRADING PHOTO -->
+    <section class="hero">
+        <div class="logo-box">
+            <img src="trading-logo.jpg"
+                 alt="Trading Logo Photo">
+        </div>
+        <h1>Hāji <span>salman memon</span></h1>
+        <a class="join-btn"
+           href="https://t.me/YOUR_CHANNEL"
+           target="_blank" rel="noopener">
+           📲 JOIN NOW ON TELEGRAM
+        </a>
+        <p class="tagline">
+            Market Updates • Research • Learning
+        </p>
+        <div class="info-btn">
+            📈 DAILY MARKET INFORMATION
+        </div>
+    </section>
+    <!-- MARKET INFORMATION -->
+    <section class="market-grid">
+        <div class="market-card">
+            <h3>NIFTY 50</h3>
+            <p class="price">25,000</p>
+            <p class="up">▲ +0.45%</p>
+        </div>
+        <div class="market-card">
+            <h3>SENSEX</h3>
+            <p class="price">81,500</p>
+            <p class="up">▲ +0.32%</p>
+        </div>
+        <div class="market-card">
+            <h3>BANK NIFTY</h3>
+            <p class="price">55,200</p>
+            <p class="down">▼ -0.18%</p>
+        </div>
+    </section>
+    <!-- WHY FOLLOW US -->
+    <h2 class="section-title">
+        WHY <span>FOLLOW US?</span>
+    </h2>
+    <section class="features">
+        <div class="feature">
+            <div class="emoji">📊</div>
+            <h3>Market Updates</h3>
+            <p>Stay informed with market-related updates and information.</p>
+        </div>
+        <div class="feature">
+            <div class="emoji">⚡</div>
+            <h3>Quick Information</h3>
+            <p>Get updates and educational content through our channel.</p>
+        </div>
+        <div class="feature">
+            <div class="emoji">📚</div>
+            <h3>Learn & Grow</h3>
+            <p>Explore stock market concepts and trading education.</p>
+        </div>
+        <div class="feature">
+            <div class="emoji">🔔</div>
+            <h3>Join Our Channel</h3>
+            <p>Follow our Telegram channel for new posts and updates.</p>
+        </div>
+    </section>
+    <div class="bottom-join">
+        <a class="join-btn"
+           href="https://t.me/YOUR_CHANNEL"
+           target="_blank" rel="noopener">
+           🚀 SUBSCRIBE ON TELEGRAM
+        </a>
+    </div>
+    <footer>
+        MarketPro • Stock Market Information<br>
+        Educational content only. Not financial advice.
+    </footer>
+</div>
+</body>
+</html>
